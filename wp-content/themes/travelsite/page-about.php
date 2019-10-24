@@ -9,7 +9,7 @@ get_header(); ?>
 <main role="main">
     <!-- section -->
     <section>
-
+<h2>Line Changes</h2>
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
         <!-- article -->
