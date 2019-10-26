@@ -26,27 +26,33 @@
 </head>
 
 <body <?php body_class(); ?>>
-
-
-
     <!-- header -->
     <header class="header clear" role="banner">
-        <!-- wrapper -->
-        <div class="wrapper">
-            <!-- logo -->
-            <div class="logo">
-                <a href="<?php echo home_url(); ?>">
-                    <!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
-                    <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
-                </a>
-            </div>
-            <!-- /logo -->
+        <!-- nav-canvas -->
+        <div class="nav-canvas">
+            <!-- wrapper -->
+            <div class="wrapper">
+                <!-- logo -->
+                <div class="logo">
+                    <a href="<?php echo home_url(); ?>">
+                        <!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
+                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="Logo" class="logo-img">
+                    </a>
+                </div>
+                <!-- /logo -->
+                <!-- nav -->
+                <nav class="nav" role="navigation">
+                    <?php html5blank_nav(); ?>
+                </nav>
+                <!-- /nav -->
+            </div> <!-- /wrapper -->
+        </div><!-- nav-canvas -->
 
-            <!-- nav -->
-            <nav class="nav" role="navigation">
-                <?php html5blank_nav(); ?>
-            </nav>
-            <!-- /nav -->
-        </div> <!-- /wrapper -->
+        <?php
+        $featured = wp_get_attachment_image_src(get_post_thumbnail_id(),'full' );
+        $featured = $featured[0];
+        ?>
+        <div class="featured-image" style="background-image:url(<?php echo $featured; ?>);"></div>
+
     </header>
     <!-- /header -->
