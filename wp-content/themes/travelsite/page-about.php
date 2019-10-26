@@ -10,6 +10,7 @@ get_header(); ?>
     <!-- section -->
     <section>
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+        <h2><?php the_title(); ?></h2>
 
         <!-- article -->
         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,10 +20,27 @@ get_header(); ?>
 
             <br class="clear">
 
-            <?php edit_post_link(); ?>
 
         </article>
         <!-- /article -->
+        <div class="about-images">
+            <?php if( get_field('number_one') ): ?>
+            <div class="photo">
+                <?php
+               $image_id = get_field('number_one');
+                echo wp_get_attachment_image( $image_id, 'medium', false, array('class'=>'photo-img') );
+               ?>
+            </div>
+            <?php endif; ?>
+            <?php if( get_field('number_two') ): ?>
+            <div class="photo">
+                <?php
+               $image_id = get_field('number_two');
+                echo wp_get_attachment_image( $image_id, 'medium', false, array('class'=>'photo-img') );
+               ?>
+            </div>
+            <?php endif; ?>
+        </div>
 
         <?php endwhile; ?>
 
@@ -42,6 +60,5 @@ get_header(); ?>
     <!-- /section -->
 </main>
 
-<!-- <?php get_sidebar(); ?> -->
 
 <?php get_footer(); ?>
