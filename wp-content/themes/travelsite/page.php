@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<div class="wrapper">
 <main role="main">
     <!-- section -->
     <section>
@@ -37,6 +37,8 @@
     </section>
     <!-- /section -->
 </main>
+</div>
+
 
 <?php get_sidebar(); ?>
 

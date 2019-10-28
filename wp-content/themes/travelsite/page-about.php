@@ -2,18 +2,16 @@
 /* 
 * Template Name: About Us
 */
-
-
 get_header(); ?>
-
+<div class="wrapper">
 <main role="main">
     <!-- section -->
-    <section>
+    <section class="clear">
         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-        <h2><?php the_title(); ?></h2>
+        <h2><span><?php the_title(); ?></span></h2>
 
         <!-- article -->
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <article id="post-<?php the_ID(); ?>" <?php post_class('grid2-3'); ?>>
 
             <?php the_content(); ?>
 
@@ -23,7 +21,7 @@ get_header(); ?>
 
         </article>
         <!-- /article -->
-        <div class="about-images">
+        <div class="about-images grid1-3 omega">
             <?php if( get_field('number_one') ): ?>
             <div class="photo">
                 <?php
@@ -58,7 +56,9 @@ get_header(); ?>
 
     </section>
     <!-- /section -->
-</main>
+</main> 
+
 
 
 <?php get_footer(); ?>
+</div>
